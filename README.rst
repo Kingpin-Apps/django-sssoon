@@ -22,4 +22,8 @@ Quick start
     url(r'^', include('sssoon.urls', namespace="sssoon")),
 
 
-3. Start the development server and visit http://127.0.0.1:8000/
+3. Collect static files
+
+    python manage.py collectstatic
+
+4. Start the development server and visit http://127.0.0.1:8000/
