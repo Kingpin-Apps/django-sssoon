@@ -1,5 +1,5 @@
 include LICENSE
-include README.rst
+include README.md
 recursive-include sssoon/static *
 recursive-include sssoon/templates *
 recursive-include docs *
