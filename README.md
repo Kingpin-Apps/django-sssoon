@@ -3,7 +3,7 @@ django-sssoon
 =============
 
 Django-sssoon is a simple Django app to add beautiful coming soon webpage to your django website. This template is
-based on on Bootstrap 3 and designed by Bootstrapious.com.
+based on on Bootstrap 3 and designed by [Creative Tim](https://www.creative-tim.com/).
 
 Detailed documentation is in the "docs" directory.
 
