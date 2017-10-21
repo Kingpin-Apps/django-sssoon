@@ -8,6 +8,6 @@ class NewsletterForm(forms.Form):
                                  'type': 'email',
                                  'title': 'Email',
                                  'name': 'email',
-                                 'class': 'newsletter-email',
-                                 'placeholder': 'Email'
+                                 'class': 'form-control transparent',
+                                 'placeholder': 'jane.doe@example.com'
                              }))

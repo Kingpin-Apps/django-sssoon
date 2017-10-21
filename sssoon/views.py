@@ -68,7 +68,7 @@ def signup(request):
         else:
             # Return an error message.
             response_data['result'] = 'Failed'
-            response_data['message'] = json.dumps(form.errors)
+            response_data['message'] = 'Please enter a valid email address.'
         return HttpResponse(json.dumps(response_data), content_type="application/json")
     else:
         return redirect('webapp:index')
