@@ -1,0 +1,5 @@
+Hi,
+
+Thank you for your interest in us.  We have added the following email address to our records, and will notify you when our website is ready.
+
+{{ email }}

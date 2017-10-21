@@ -1,3 +1,9 @@
 from django.contrib import admin
+from sssoon.models import MailingList
 
-# Register your models here.
+
+class MailingListAdmin(admin.ModelAdmin):
+    resource_class = MailingList
+
+
+admin.site.register(MailingList, MailingListAdmin)

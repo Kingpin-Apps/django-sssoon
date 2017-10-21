@@ -29,17 +29,21 @@
       <div class="overlay"></div>
       <div class="container">
         <p class="social"><a href="#" title="" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title="" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" title="" class="gplus"><i class="fa fa-google-plus"></i></a><a href="#" title="" class="instagram"><i class="fa fa-instagram"></i></a></p>
-        <h1 class="cursive">Beautiful comming soon template</h1>
+        <h1 class="cursive">Beautiful coming soon template</h1>
         <h2 class="sub">You can expect this beautiful website running soon. </h2>
         <div class="mailing-list">
           <h3 class="mailing-list-heading">Join our mailing list and we will notify you once it is ready!</h3>
           <div class="row">
-            <form class="form-inline">
-              <div class="form-group">
-                <label for="email" class="sr-only"></label>
-                <input type="email" placeholder="jane.doe@example.com" id="email" class="form-control transparent">
-              </div>
-              <button class="btn btn-danger">subscribe </button>
+            <form id="email-signup" class="form-inline" action="{% url 'sssoon:signup' %}" method="POST" onsubmit="return false;">
+              {% csrf_token %}
+              <div class="alert col-md-6 col-md-offset-3 sssoon-alert" style="display: none;"></div>
+              <div class="col-md-6 col-md-offset-3">
+                <div class="form-group">
+                  <label for="email" class="sr-only"></label>
+                  {{ form.email }}
+                </div>
+                <button class="btn btn-danger">subscribe </button>
+
             </form>
           </div>
         </div>
@@ -48,7 +52,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <p>&copy;2015 Your name/company goes here</p>
+              <p>&copy;{% now "Y" %} Your name/company goes here</p>
             </div>
             <div class="col-md-6">
               <p class="credit">Made by <a href="https://bootstrapious.com">Bootstrapious.com</a></p>
@@ -73,5 +77,82 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+
+    <script type="application/javascript">
+      $(document).ready(function(){
+          $("#email-signup").formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Email address is required'
+                        },
+                        emailAddress: {
+                            message: 'Please input a valid email address'
+                        }
+                    }
+                }
+            }
+        }).on('success.field.fv', function(e, data) {
+          // If the field is empty
+          if (data.element.val() === '') {
+            var $parent = data.element.parents('.form-group');
+
+            // Remove the has-success class
+            $parent.removeClass('has-success');
+            $parent.removeClass('has-error');
+
+            // Hide the success icon
+            data.element.data('fv.icon').hide();
+          }
+        }).on('success.form.fv', function(e) {
+            e.preventDefault();
+            var obj = $(this);
+            if (obj.hasClass("disabled")) {
+                return false;
+            }
+            obj.addClass("disabled");
+
+            var msgobj = obj.find(".alert");
+            msgobj.addClass("alert-general");
+            msgobj.text("Sending...");
+            msgobj.fadeIn();
+            obj.removeClass("disabled");
+
+            $.ajax({
+                url: obj.attr("action"),
+                type: 'post',
+                dataType: 'json',
+                data: obj.serialize(),
+                success: function(r) {
+                    results = r;
+                    if (r.result === "Success") {
+                        msgobj.removeClass("alert-error");
+                        msgobj.addClass("alert-success");
+                    } else {
+                        msgobj.removeClass("alert-success");
+                        msgobj.addClass("alert-error");
+                    }
+                    msgobj.text(r.message);
+                    msgobj.fadeIn();
+                    obj.removeClass("disabled");
+                },
+                // handle a non-successful response
+                error: function(xhr, errmsg, err) {
+                    msgobj.text("Oops! We have encountered an error: " + errmsg);
+                    console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                }
+            });
+        });
+      })
+    </script>
+
+
   </body>
 </html>
