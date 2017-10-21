@@ -1,4 +1,4 @@
-=============
+
 django-sssoon
 =============
 
@@ -12,18 +12,23 @@ Quick start
 
 1. Add "sssoon" to your INSTALLED_APPS setting like this::
 
-    INSTALLED_APPS = [
-        ...
-        'sssoon',
-    ]
+```python
+INSTALLED_APPS = [
+    ...
+    'sssoon',
+]
+```
 
 2. Include the sssoon URLconf in your project urls.py like this to make your index page coming sssoon::
 
-    url(r'^', include('sssoon.urls', namespace="sssoon")),
-
+```python
+url(r'^', include('sssoon.urls', namespace="sssoon")),
+```
 
 3. Collect static files
 
-    python manage.py collectstatic
+```python
+python manage.py collectstatic
+```
 
 4. Start the development server and visit http://127.0.0.1:8000/
