@@ -12,7 +12,7 @@ setup(
     version='0.1.1',
     packages=find_packages(),
     include_package_data=True,
-    license='BSD License',  # example license
+    license='BSD License',
     description='A simple Django app to add a beautiful coming soon page to your project.',
     long_description=README,
     url='https://github.com/KINGH242/django-sssoon',
@@ -31,5 +31,5 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-    ],
+    ]
 )
