@@ -11,8 +11,13 @@ Detailed documentation is in the "docs" directory.
 
 Quick start
 -----------
+1. django-sssoon is available on the Python Package Index (PyPI), so it can be installed with standard Python tools like `pip` or `easy_install`::
 
-1. Add "sssoon" to your INSTALLED_APPS setting like this::
+```python
+pip install django-sssoon
+```
+
+2. Add "sssoon" to your INSTALLED_APPS setting like this::
 
 ```python
 INSTALLED_APPS = [
