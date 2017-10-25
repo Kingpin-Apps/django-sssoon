@@ -11,13 +11,13 @@ Detailed documentation is in the "docs" directory.
 
 Quick start
 -----------
-1. django-sssoon is available on the Python Package Index (PyPI), so it can be installed with standard Python tools like `pip` or `easy_install`::
+1. django-sssoon is available on the Python Package Index (PyPI), so it can be installed with standard Python tools like `pip` or `easy_install`:
 
 ```python
 pip install django-sssoon
 ```
 
-2. Add "sssoon" to your INSTALLED_APPS setting like this::
+2. Add "sssoon" to your INSTALLED_APPS setting like this:
 
 ```python
 INSTALLED_APPS = [
@@ -26,7 +26,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-2. Include the sssoon URLconf in your project urls.py like this to make your index page coming sssoon::
+2. Include the sssoon URLconf in your project urls.py like this to make your index page coming sssoon:
 
 ```python
 url(r'^', include('sssoon.urls', namespace="sssoon")),
