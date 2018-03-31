@@ -1,7 +1,7 @@
-{% load staticfiles%}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Coming Soon Bootstrap Landing Page</title>
@@ -23,66 +23,81 @@
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-  </head>
-  <body>
-    <div style="background-image: url('/static/sssoon/img/paris.jpg')" class="main">
-      <div class="overlay"></div>
-      <div class="container">
-        <p class="social"><a href="#" title="" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title="" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" title="" class="gplus"><i class="fa fa-google-plus"></i></a><a href="#" title="" class="instagram"><i class="fa fa-instagram"></i></a></p>
+</head>
+<body>
+<div style="background-image: url('/static/sssoon/img/paris.jpg')" class="main">
+    <div class="overlay"></div>
+    <div class="container">
+        <p class="social"><a href="#" title="" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title=""
+                                                                                                     class="twitter"><i
+                class="fa fa-twitter"></i></a><a href="#" title="" class="gplus"><i class="fa fa-google-plus"></i></a><a
+                href="#" title="" class="instagram"><i class="fa fa-instagram"></i></a></p>
         <h1 class="cursive">Beautiful coming soon template</h1>
         <h2 class="sub">You can expect this beautiful website running soon. </h2>
         <div class="mailing-list">
-          <h3 class="mailing-list-heading">Join our mailing list and we will notify you once it is ready!</h3>
-          <div class="row">
-            <form id="email-signup" class="form-inline" action="{% url 'sssoon:signup' %}" method="POST" onsubmit="return false;">
-              {% csrf_token %}
-              <div class="alert col-md-6 col-md-offset-3 sssoon-alert" style="display: none;"></div>
-              <div class="col-md-6 col-md-offset-3">
-                <div class="form-group">
-                  <label for="email" class="sr-only"></label>
-                  {{ signupform.email }}
-                </div>
-                <button class="btn btn-danger">subscribe </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p>&copy;{% now "Y" %} Your name/company goes here</p>
+            <h3 class="mailing-list-heading">Join our mailing list and we will notify you once it is ready!</h3>
+            <div class="row">
+                <form id="email-signup" class="form-inline" action="{% url 'sssoon:signup' %}" method="POST"
+                      onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="alert col-md-6 col-md-offset-3 sssoon-alert" style="display: none;"></div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="form-group">
+                            <label for="email" class="sr-only"></label>
+                            {{ signupform.email }}
+                            <button class="btn btn-danger">subscribe</button>
+                            {{ signupform.captcha }}
+                        </div>
+                        <button class="btn btn-danger">subscribe</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-6">
-              <p class="credit">Made by <a href="https://bootstrapious.com">Bootstrapious.com</a></p>
-               <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-    <!-- JAVASCRIPT FILES -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-    <script src="{% static 'sssoon/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'sssoon/js/jquery.cookie.js' %}"></script>
-    <script src="{% static 'sssoon/js/front.js' %}"></script>
-    <script src="{% static 'sssoon/js/formValidation.min.js' %}"></script>
-    <script src="{% static 'sssoon/js/framework/bootstrap.min.js' %}"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy;{% now "Y" %} Your name/company goes here</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="credit">Made by <a href="https://bootstrapious.com">Bootstrapious.com</a></p>
+                    <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- JAVASCRIPT FILES -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="{% static 'sssoon/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'sssoon/js/jquery.cookie.js' %}"></script>
+<script src="{% static 'sssoon/js/front.js' %}"></script>
+<script src="{% static 'sssoon/js/formValidation.min.js' %}"></script>
+<script src="{% static 'sssoon/js/framework/bootstrap.min.js' %}"></script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+<script>
+    (function (b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function () {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
 
-    <script type="application/javascript">
-      $(document).ready(function(){
-          $("#email-signup").formValidation({
+<script type="application/javascript">
+    $(document).ready(function () {
+        $("#email-signup").formValidation({
             framework: 'bootstrap',
             icon: {
                 valid: 'glyphicon glyphicon-ok',
@@ -101,19 +116,19 @@
                     }
                 }
             }
-        }).on('success.field.fv', function(e, data) {
-          // If the field is empty
-          if (data.element.val() === '') {
-            var $parent = data.element.parents('.form-group');
+        }).on('success.field.fv', function (e, data) {
+            // If the field is empty
+            if (data.element.val() === '') {
+                var $parent = data.element.parents('.form-group');
 
-            // Remove the has-success class
-            $parent.removeClass('has-success');
-            $parent.removeClass('has-error');
+                // Remove the has-success class
+                $parent.removeClass('has-success');
+                $parent.removeClass('has-error');
 
-            // Hide the success icon
-            data.element.data('fv.icon').hide();
-          }
-        }).on('success.form.fv', function(e) {
+                // Hide the success icon
+                data.element.data('fv.icon').hide();
+            }
+        }).on('success.form.fv', function (e) {
             e.preventDefault();
             var obj = $(this);
             if (obj.hasClass("disabled")) {
@@ -132,7 +147,7 @@
                 type: 'post',
                 dataType: 'json',
                 data: obj.serialize(),
-                success: function(r) {
+                success: function (r) {
                     results = r;
                     if (r.result === "Success") {
                         msgobj.removeClass("alert-error");
@@ -146,14 +161,14 @@
                     obj.removeClass("disabled");
                 },
                 // handle a non-successful response
-                error: function(xhr, errmsg, err) {
+                error: function (xhr, errmsg, err) {
                     msgobj.text("Oops! We have encountered an error: " + errmsg);
                     console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
                 }
             });
         });
-      })
-    </script>
+    })
+</script>
 
-  </body>
+</body>
 </html>

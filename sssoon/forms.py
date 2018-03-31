@@ -1,4 +1,5 @@
 from django import forms
+from nocaptcha_recaptcha.fields import NoReCaptchaField
 
 
 class NewsletterForm(forms.Form):
@@ -11,3 +12,5 @@ class NewsletterForm(forms.Form):
                                  'class': 'form-control transparent',
                                  'placeholder': 'jane.doe@example.com'
                              }))
+
+    captcha = NoReCaptchaField()

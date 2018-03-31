@@ -1,41 +1,57 @@
 Metadata-Version: 1.1
 Name: django-sssoon
-Version: 0.1
+Version: 0.1.2
 Summary: A simple Django app to add a beautiful coming soon page to your project.
 Home-page: https://github.com/KINGH242/django-sssoon
 Author: Kingpin Apps
 Author-email: hadderley@kingpinapps.com
 License: BSD License
-Description: =============
+Description: 
         django-sssoon
         =============
         
         Django-sssoon is a simple Django app to add beautiful coming soon webpage to your django website. This template is
-        based on on Bootstrap 3 and designed by Bootstrapious.com.
+        based on on Bootstrap 3 and designed by [Creative Tim](https://www.creative-tim.com/).
+        
+        ![Screenshot](./docs/images/screencapture.png "Screenshot")
         
         Detailed documentation is in the "docs" directory.
         
         Quick start
         -----------
+        1. django-sssoon is available on the Python Package Index (PyPI), so it can be installed with standard Python tools like `pip` or `easy_install`:
         
-        1. Add "sssoon" to your INSTALLED_APPS setting like this::
+        ```python
+        pip install django-sssoon
+        ```
         
-            INSTALLED_APPS = [
-                ...
-                'sssoon',
-            ]
+        2. Add "sssoon" to your INSTALLED_APPS setting like this:
         
-        2. Include the sssoon URLconf in your project urls.py like this to make your index page coming sssoon::
+        ```python
+        INSTALLED_APPS = [
+            ...
+            'sssoon',
+        ]
+        ```
         
-            url(r'^', include('sssoon.urls', namespace="sssoon")),
+        2. Include the sssoon URLconf in your project urls.py like this to make your index page coming sssoon:
         
+        ```python
+        url(r'^', include('sssoon.urls', namespace="sssoon")),
+        ```
         
-        3. Start the development server and visit http://127.0.0.1:8000/
+        3. Collect static files
+        
+        ```python
+        python manage.py collectstatic
+        ```
+        
+        4. Start the development server and visit http://127.0.0.1:8000/
         
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment
 Classifier: Framework :: Django
-Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.11
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: BSD License
 Classifier: Operating System :: OS Independent
