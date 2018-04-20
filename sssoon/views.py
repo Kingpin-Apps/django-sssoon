@@ -68,7 +68,12 @@ def signup(request):
         else:
             # Return an error message.
             response_data['result'] = 'Failed'
-            response_data['message'] = 'Please enter a valid email address.'
+            response_data['message'] = 'Please enter a valid email address and reCAPTCHA.'
         return HttpResponse(json.dumps(response_data), content_type="application/json")
     else:
-        return redirect('webapp:index')
+        return redirect('sssoon:index')
+
+
+def redirect_404(request):
+    return redirect('sssoon:index')
+

@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: django-sssoon
-Version: 0.1.2
+Version: 0.1.4
 Summary: A simple Django app to add a beautiful coming soon page to your project.
 Home-page: https://github.com/KINGH242/django-sssoon
 Author: Kingpin Apps

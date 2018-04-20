@@ -2,6 +2,7 @@ __author__ = 'Kingpin Apps'
 from django.conf.urls import url
 from . import views
 
+app_name = 'sssoon'
 
 urlpatterns = [
     # ex: /
