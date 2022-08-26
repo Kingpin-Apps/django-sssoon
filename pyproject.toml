@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-sssoon"
-version = "0.1.11"
+version = "0.1.12"
 description = "A simple Django app to add a beautiful coming soon page to your project."
 authors = ["Hareem Adderley <HADDERLEY@KINGPINAPPS.COM>"]
 keywords = ["coming", "soon", "django", "sssoon"]
