@@ -17,7 +17,7 @@ def index(request):
         'signupform': signupform
     }
 
-    return render(request, 'sssoon/templates/sssoon/index.html', context)
+    return render(request, 'sssoon/index.html', context)
 
 
 def video(request):
@@ -27,7 +27,7 @@ def video(request):
         'signupform': signupform
     }
 
-    return render(request, 'sssoon/templates/sssoon/video.html', context)
+    return render(request, 'sssoon/video.html', context)
 
 
 def signup(request):
