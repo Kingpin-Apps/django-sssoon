@@ -17,7 +17,7 @@ def index(request):
         'signupform': signupform
     }
 
-    return render(request, 'sssoon/index.html', context)
+    return render(request, 'sssoon/templates/sssoon/index.html', context)
 
 
 def video(request):
@@ -27,7 +27,7 @@ def video(request):
         'signupform': signupform
     }
 
-    return render(request, 'sssoon/video.html', context)
+    return render(request, 'sssoon/templates/sssoon/video.html', context)
 
 
 def signup(request):
@@ -43,7 +43,7 @@ def signup(request):
 
             if created:
                 # Email the profile
-                template = loader.get_template('sssoon/sign_up_email_template.txt')
+                template = loader.get_template('sssoon/templates/sssoon/sign_up_email_template.txt')
 
                 context = {
                     'email': email,

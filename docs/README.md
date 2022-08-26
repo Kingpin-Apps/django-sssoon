@@ -12,12 +12,13 @@ Quick start
 
     INSTALLED_APPS = [
         ...
+        'captcha',
         'sssoon',
     ]
 
 2. Include the sssoon URLconf in your project urls.py like this to make your index page coming sssoon::
 
-    url(r'^', include('sssoon.urls', namespace="sssoon")),
+    path('', include('sssoon.urls', namespace="sssoon")),
 
 
 3. Collect static files

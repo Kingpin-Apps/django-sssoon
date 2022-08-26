@@ -1,14 +1,17 @@
 __author__ = 'Kingpin Apps'
-from django.conf.urls import url
-from . import views
 
-app_name = 'sssoon'
+from django.urls import path
+
+from . import views
+from .apps import SssoonConfig
+
+app_name = SssoonConfig.name
 
 urlpatterns = [
     # ex: /
-    url(r'^$', views.index, name='index'),
+    path('', views.index, name='index'),
     # ex: /video
-    url(r'^video/$', views.video, name='video'),
+    path('video/', views.video, name='video'),
     # ex: /signup
-    url(r'^signup/$', views.signup, name='signup'),
+    path('signup/', views.signup, name='signup'),
 ]
